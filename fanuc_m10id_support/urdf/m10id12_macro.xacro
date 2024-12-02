@@ -110,6 +110,87 @@
       </collision>
     </link>
 
+<!-- DCS ZONE LINKS: 5 zone links starting at link_2 -->
+    <link name="dcs_z2">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_m10id_support/meshes/m10id12/visual/dcs_z2.stl"/>
+        </geometry>
+        <!-- <xacro:material_fanuc_black /> -->
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_m10id_support/meshes/m10id12/collision/dcs_z2.stl"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="dcs_z3">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_m10id_support/meshes/m10id12/visual/dcs_z3.stl"/>
+        </geometry>
+        <!-- <xacro:material_fanuc_black /> -->
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_m10id_support/meshes/m10id12/collision/dcs_z3.stl"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="dcs_z4">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_m10id_support/meshes/m10id12/visual/dcs_z4.stl"/>
+        </geometry>
+        <!-- <xacro:material_fanuc_black /> -->
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_m10id_support/meshes/m10id12/collision/dcs_z4.stl"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="dcs_z5">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_m10id_support/meshes/m10id12/visual/dcs_z5.stl"/>
+        </geometry>
+        <!-- <xacro:material_fanuc_black /> -->
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_m10id_support/meshes/m10id12/collision/dcs_z5.stl"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="dcs_z6">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_m10id_support/meshes/m10id12/visual/dcs_z6.stl"/>
+        </geometry>
+        <!-- <xacro:material_fanuc_black /> -->
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://fanuc_m10id_support/meshes/m10id12/collision/dcs_z6.stl"/>
+        </geometry>
+      </collision>
+    </link>
+
 <!--//TODO: Verify ranges are correct-->
     <!-- joints: main serial chain -->
     <joint name="${prefix}joint_1" type="revolute">
@@ -178,5 +259,39 @@
       <parent link="${prefix}flange" />
       <child link="${prefix}tool0" />
     </joint>
+
+
+<!-- DCS JOINTS -->
+    <joint name="dcs_z1-joint" type="fixed">
+      <origin xyz="-0.175 0 0.127" rpy="0 0 0"/>
+      <parent link="${prefix}link_1"/>
+      <child link="dcs_z1"/>
+    </joint>
+
+    <joint name="dcs_z2-joint" type="fixed">
+      <origin xyz="-0.035 -0.04 0.02" rpy="0 0 0"/>
+      <parent link="${prefix}link_2"/>
+      <child link="dcs_z2"/>
+    </joint>
+
+    <joint name="dcs_z3-joint" type="fixed">
+      <origin xyz="0.085 0.01 -0.14" rpy="0 0 0"/>
+      <parent link="${prefix}link_3"/>
+      <child link="dcs_z3"/>
+    </joint>
+
+    <joint name="dcs_z4-joint" type="fixed">
+      <origin xyz="0.041 0.07 0" rpy="0 0 0"/>
+      <parent link="${prefix}link_4"/>
+      <child link="dcs_z4"/>
+    </joint>
+
+    <joint name="dcs_z5-joint" type="fixed">
+      <origin xyz="0.035 0.057 -0.065" rpy="0 0 0"/>
+      <parent link="${prefix}link_5"/>
+      <child link="dcs_z5"/>
+    </joint>
+
+
   </xacro:macro>
 </robot>
