@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
   <xacro:include filename="$(find fanuc_resources)/urdf/common_materials.xacro"/>
 
-  <xacro:macro name="fanuc_m10id12" params="prefix">
+  <xacro:macro name="fanuc_m10id12_capsule" params="prefix">
     <!-- links: main serial chain -->
     <link name="${prefix}base_link">
       <visual>
